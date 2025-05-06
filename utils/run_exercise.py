@@ -45,7 +45,7 @@ def configureP4Switch(**switch_args):
                 P4RuntimeSwitch.__init__(self, *opts, **kwargs)
 
             def describe(self):
-                print "%s -> gRPC port: %d" % (self.name, self.grpc_port)
+                print ("%s -> gRPC port: %d" % (self.name, self.grpc_port))
 
         return ConfiguredP4RuntimeSwitch
     else:
@@ -59,7 +59,7 @@ def configureP4Switch(**switch_args):
                 P4Switch.__init__(self, *opts, **kwargs)
 
             def describe(self):
-                print "%s -> Thrift port: %d" % (self.name, self.thrift_port)
+                print ("%s -> Thrift port: %d" % (self.name, self.thrift_port))
 
         return ConfiguredP4Switch
 
@@ -119,12 +119,12 @@ class ExerciseTopo(Topo):
         self.sw_port_mapping[sw].append((portno, node2))
 
     def printPortMapping(self):
-        print "Switch port mapping:"
-        for sw in sorted(self.sw_port_mapping.keys()):
-            print "%s: " % sw,
-            for portno, node2 in self.sw_port_mapping[sw]:
-                print "%d:%s\t" % (portno, node2),
-            print
+            print("Switch port mapping:")
+            for sw in sorted(self.sw_port_mapping.keys()):
+                print("%s: " % sw, end="")
+                for portno, node2 in self.sw_port_mapping[sw]:
+                    print("%d:%s\t" % (portno, node2), end="")
+                print()
 
 
 class ExerciseRunner:

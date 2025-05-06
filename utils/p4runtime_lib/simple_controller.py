@@ -19,8 +19,8 @@ import json
 import os
 import sys
 
-import bmv2
-import helper
+from . import bmv2
+from . import helper
 
 
 def error(msg):

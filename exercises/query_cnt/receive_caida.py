@@ -16,7 +16,7 @@ def get_if():
             iface=i
             break;
     if not iface:
-        print "Cannot find eth0 interface"
+        print ("Cannot find eth0 interface")
         exit(1)
     return iface
 
@@ -47,7 +47,7 @@ class IPOption_QUERY(IPOption):
                     ByteField("flow_proto", 0)]
 
 def handle_pkt(pkt):
-    print "got a packet"
+    print ("got a packet")
     pkt.show2()
 #    hexdump(pkt)
     sys.stdout.flush()
@@ -55,7 +55,7 @@ def handle_pkt(pkt):
 
 def main():
     iface = 'h2-eth0'
-    print "sniffing on %s" % iface
+    print ("sniffing on %s" % iface)
     sys.stdout.flush()
     sniff(filter="", iface = iface,
           prn = lambda x: handle_pkt(x))

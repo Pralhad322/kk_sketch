@@ -14,7 +14,7 @@ const bit<32> MAX_TUNNEL_ID = 1 << 16;
 
 
 const bit<32> HEAVY_PART_COUNTER_SIZE = 100;
-const bit<72> IDLE_HEAVY_COUNTER_FLOWID = 168w0;
+const bit<72> IDLE_HEAVY_COUNTER_FLOWID = 72w0;
 
 const bit<32> EVICT_THRESHOLD = 5;
 
